@@ -1,5 +1,8 @@
 # FashionGAN
 
+Be sure to follow smpl-x original repository for installation instructions:
+[SMPL-X](https://github.com/vchoutas/smplify-x)
+
 Sample results can be found in directory:
 
 ```
