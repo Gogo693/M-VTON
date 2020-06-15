@@ -3,19 +3,18 @@ import configargparse
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--chunkn',
+parser.add_argument('--dataset',
                     required=True,
-                    type=int,
-                    help='The number of the chunk to be processed')
+                    help='Specify train or test.')
 
 args = parser.parse_args()
-chunk_n = str(args.chunkn).zfill(3) + '_chunk/'
+dataset = str(args.dataset)
 
 
 command = 'python3 smplifyx/main.py \
                     --config cfg_files/fit_smpl.yaml \
-                    --data_folder ./input/' + chunk_n + ' \
-                    --output_folder ./output/' + chunk_n + ' \
+                    --data_folder ./input/' + dataset + ' \
+                    --output_folder ./output/' + dataset + ' \
                     --visualize=True \
                     --model_folder ./models \
                     --vposer_ckpt  ../vposer_v1_0 \
