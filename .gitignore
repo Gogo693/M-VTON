@@ -3,3 +3,7 @@
 *.pyc
 *.jpg
 *.json
+*.png
+*.gogo
+*.tar.xz
+venv*
