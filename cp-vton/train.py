@@ -168,6 +168,9 @@ def main():
     print(opt)
     print("Start to train stage: %s, named: %s!" % (opt.stage, opt.name))
    
+    cuda3 = torch.cuda.set_device(3)
+    print('Using GPU number: ' + str(torch.cuda.current_device()))
+    
     # create dataset 
     train_dataset = CPDataset(opt)
 
