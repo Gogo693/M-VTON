@@ -7,3 +7,5 @@
 *.gogo
 *.tar.xz
 venv*
+data*
+*.pth

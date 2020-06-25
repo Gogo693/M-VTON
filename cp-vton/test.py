@@ -151,7 +151,7 @@ def main():
         with torch.no_grad():
             test_gmm(opt, train_loader, model, board)
     elif opt.stage == 'TOM':
-        model = UnetGenerator(29, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
+        model = UnetGenerator(26, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
         load_checkpoint(model, opt.checkpoint)
         with torch.no_grad():
             test_tom(opt, train_loader, model, board)

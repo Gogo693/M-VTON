@@ -20,6 +20,8 @@ command = 'python train.py \
                     --workers 4 \
                     --save_count 50000 \
                     --shuffle \
+		    --keep_step 20 \
+		    --decay_step 20 \
                 '
 print(command)
 os.system(command)
@@ -51,7 +53,9 @@ command = 'python train.py \
                     --stage TOM \
                     --workers 4 \
                     --save_count 50000 \
-                    --shuffle
+                    --shuffle \
+		    --keep_step 20 \
+		    --decay_step 20 \
                 '
 print(command)
 os.system(command)
