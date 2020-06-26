@@ -140,10 +140,10 @@ class CPDataset(data.Dataset):
         # cloth-agnostic representation
         if use_mesh == True:
             # Mesh Default
-            agnostic = torch.cat([shape, im_h, pose_map, mesh], 0)
+            #agnostic = torch.cat([shape, im_h, pose_map, mesh], 0)
 
             # No shape
-            #agnostic = torch.cat([mesh, im_h, pose_map], 0)
+            agnostic = torch.cat([mesh, im_h, pose_map], 0)
 
             # Pants
             #agnostic = torch.cat([shape, mesh, im_h, im_p, pose_map], 0)
