@@ -171,7 +171,7 @@ def main():
     print(opt)
     print("Start to train stage: %s, named: %s!" % (opt.stage, opt.name))
    
-    cuda1 = torch.cuda.set_device(4)
+    cuda1 = torch.cuda.set_device(3)
     print('Using GPU number: ' + str(torch.cuda.current_device()))
     
     # create dataset 
@@ -193,7 +193,7 @@ def main():
         train_gmm(opt, train_loader, model, board)
         save_checkpoint(model, os.path.join(opt.checkpoint_dir, opt.name, 'gmm_final.pth'))
     elif opt.stage == 'TOM':
-        model = UnetGenerator(29, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
+        model = UnetGenerator(28, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
         if not opt.checkpoint =='' and os.path.exists(opt.checkpoint):
             load_checkpoint(model, opt.checkpoint)
         train_tom(opt, train_loader, model, board)
