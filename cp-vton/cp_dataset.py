@@ -48,7 +48,7 @@ class CPDataset(data.Dataset):
         c_name = self.c_names[index]
         im_name = self.im_names[index]
 
-        use_mesh = False
+        use_mesh = True
 
         # cloth image & cloth mask
         if self.stage == 'GMM':
