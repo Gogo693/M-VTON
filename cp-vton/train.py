@@ -40,6 +40,7 @@ def get_opt():
 
     parser.add_argument("--mesh", action='store_true', help='Use mesh.')
     parser.add_argument("--pants", action='store_true', help='Use pants.')
+    parser.add_argument("--noshape", action='store_true', help='Dont use shape.')
 
 
     opt = parser.parse_args()
@@ -113,6 +114,8 @@ def train_tom(opt, train_loader, model, board):
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda = lambda step: 1.0 -
             max(0, step - opt.keep_step) / float(opt.decay_step + 1))
     
+    start_time = time.time()
+
     for step in range(opt.keep_step + opt.decay_step):
         iter_start_time = time.time()
         inputs = train_loader.next_batch()
@@ -168,7 +171,7 @@ def main():
     print(opt)
     print("Start to train stage: %s, named: %s!" % (opt.stage, opt.name))
    
-    cuda3 = torch.cuda.set_device(3)
+    cuda1 = torch.cuda.set_device(1)
     print('Using GPU number: ' + str(torch.cuda.current_device()))
     
     # create dataset 
@@ -190,7 +193,7 @@ def main():
         train_gmm(opt, train_loader, model, board)
         save_checkpoint(model, os.path.join(opt.checkpoint_dir, opt.name, 'gmm_final.pth'))
     elif opt.stage == 'TOM':
-        model = UnetGenerator(28, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
+        model = UnetGenerator(25, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
         if not opt.checkpoint =='' and os.path.exists(opt.checkpoint):
             load_checkpoint(model, opt.checkpoint)
         train_tom(opt, train_loader, model, board)

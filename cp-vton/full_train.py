@@ -15,7 +15,7 @@ name = str(args.name)
 
 # Train GMM
 command = 'python train.py \
-                    --name ' + name + ' \
+                    --name ' + name + '_gmm_train \
                     --stage GMM \
                     --workers 4 \
                     --save_count 50000 \
@@ -26,7 +26,7 @@ os.system(command)
 
 # Test GMM on Training set for TOM input
 command = 'python test.py \
-                    --name ' + name + ' \
+                    --name ' + name + '_gmm_test \
                     --stage GMM \
                     --workers 4 \
                     --datamode train \
@@ -47,7 +47,7 @@ os.system(command)
 
 # Train TOM
 command = 'python train.py \
-                    --name ' + name + ' \
+                    --name ' + name + '_tom_train \
                     --stage TOM \
                     --workers 4 \
                     --save_count 50000 \
@@ -61,7 +61,7 @@ os.system(command)
 
 # Test GMM on Test set
 command = 'python test.py \
-                    --name ' + name + ' \
+                    --name ' + name + '_gmm_test \
                     --stage GMM \
                     --workers 4 \
                     --datamode test \
@@ -82,7 +82,7 @@ os.system(command)
 
 # Test TOM
 command = 'python test.py \
-                    --name ' + name + ' \
+                    --name ' + name + ' _tom_test \
                     --stage TOM \
                     --workers 4 \
                     --datamode test \
