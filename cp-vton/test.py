@@ -133,7 +133,7 @@ def main():
     print(opt)
     print("Start to test stage: %s, named: %s!" % (opt.stage, opt.name))
    
-    cuda1 = torch.cuda.set_device(2)
+    cuda1 = torch.cuda.set_device(4)
     print('Using GPU number: ' + str(torch.cuda.current_device()))
 
     # create dataset 
@@ -154,7 +154,7 @@ def main():
         with torch.no_grad():
             test_gmm(opt, train_loader, model, board)
     elif opt.stage == 'TOM':
-        model = UnetGenerator(26, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
+        model = UnetGenerator(29, 4, 6, ngf=64, norm_layer=nn.InstanceNorm2d)
         load_checkpoint(model, opt.checkpoint)
         with torch.no_grad():
             test_tom(opt, train_loader, model, board)
