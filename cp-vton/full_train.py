@@ -31,17 +31,17 @@ command = 'python test.py \
                     --workers 4 \
                     --datamode train \
                     --data_list train_pairs.txt \
-                    --checkpoint checkpoints/' + name + '/gmm_final.pth \
+                    --checkpoint checkpoints/' + name + '_gmm_train' + '/gmm_final.pth \
                 '
 print(command)
 os.system(command)
 
 # Move Train warping results
-command = 'cp -r ./result/gmm_final.pth/train/warp-cloth/ ./data/train/warp-cloth'
+command = 'cp -r ./result/gmm_final.pth/train/warp-cloth/ ./data/train/'
 print(command)
 os.system(command)
 
-command = 'cp -r ./result/gmm_final.pth/train/warp-mask/ ./data/train/warp-mask'
+command = 'cp -r ./result/gmm_final.pth/train/warp-mask/ ./data/train/'
 print(command)
 os.system(command)
 
@@ -66,28 +66,28 @@ command = 'python test.py \
                     --workers 4 \
                     --datamode test \
                     --data_list test_pairs.txt \
-                    --checkpoint checkpoints/' + name + '/gmm_final.pth \
+                    --checkpoint checkpoints/' + name + '_gmm_train' + '/gmm_final.pth \
                 '
 print(command)
 os.system(command)
 
-# Move Train warping results
-command = 'cp -r ./result/gmm_final.pth/test/warp-cloth/ ./data/train/warp-cloth'
+# Move Test warping results
+command = 'cp -r ./result/gmm_final.pth/test/warp-cloth/ ./data/test/'
 print(command)
 os.system(command)
 
-command = 'cp -r ./result/gmm_final.pth/test/warp-mask/ ./data/train/warp-mask'
+command = 'cp -r ./result/gmm_final.pth/test/warp-mask/ ./data/test/'
 print(command)
 os.system(command)
 
 # Test TOM
 command = 'python test.py \
-                    --name ' + name + ' _tom_test \
+                    --name ' + name + '_tom_test \
                     --stage TOM \
                     --workers 4 \
                     --datamode test \
                     --data_list test_pairs.txt \
-                    --checkpoint checkpoints/' + name + '/step_200000.pth \
+                    --checkpoint checkpoints/' + name + '_tom_train' + '/step_200000.pth \
                 '
 print(command)
 os.system(command)
