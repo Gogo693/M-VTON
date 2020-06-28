@@ -52,6 +52,8 @@ command = 'python train.py \
                     --workers 4 \
                     --save_count 50000 \
                     --shuffle \
+                    --keep_step 150000 \
+                    --decay_step 150000 \
                 '
 print(command)
 os.system(command)
@@ -87,7 +89,7 @@ command = 'python test.py \
                     --workers 4 \
                     --datamode test \
                     --data_list test_pairs.txt \
-                    --checkpoint checkpoints/' + name + '_tom_train' + '/step_200000.pth \
+                    --checkpoint checkpoints/' + name + '_tom_train' + '/step_300000.pth \
                 '
 print(command)
 os.system(command)

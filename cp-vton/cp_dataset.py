@@ -48,7 +48,7 @@ class CPDataset(data.Dataset):
         c_name = self.c_names[index]
         im_name = self.im_names[index]
 
-        use_mesh = False
+        use_mesh = True
 
         # cloth image & cloth mask
         if self.stage == 'GMM':
@@ -174,7 +174,7 @@ class CPDataset(data.Dataset):
             'pose_image': im_pose,  # for visualization
             'grid_image': im_g,     # for visualization
             'pants': im_p,
-            #'mesh': mesh,
+            'mesh': mesh,
             'pose_map': pose_map,
             'person_parse': self.transform(im_parse),
             }
