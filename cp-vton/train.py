@@ -142,9 +142,16 @@ def train_tom(opt, train_loader, model, board):
             
         loss_l1 = criterionL1(p_tryon, im)
         loss_vgg = criterionVGG(p_tryon, im)
+        loss_vgg_rend = criterionVGG(p_rendered, im)
         loss_mask = criterionMask(m_composite, cm)
         #loss_mask = criterionMask(m_composite, pcm)
-        loss = loss_l1 + loss_vgg + loss_mask
+        
+        #Original Loss
+        #loss = loss_l1 + loss_vgg + loss_mask
+        
+        #Vgg loss
+        loss = loss_l1 + loss_vgg + loss_mask + loss_vgg_rend
+
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
