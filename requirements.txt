@@ -1,4 +1,0 @@
-configargparse
-torch==0.4.1
-torchvision==0.5.0
-tensorboardx
