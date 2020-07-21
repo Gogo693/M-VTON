@@ -1,7 +1,19 @@
-# FashionGAN
+# M-VTON
 
-Be sure to follow smpl-x original repository for installation instructions:
+## Requirements
+For the mesh generation part be sure to follow smpl-x original repository for installation instructions of smpl:
 [SMPL-X](https://github.com/vchoutas/smplify-x)
+
+Install dependences for the try-on part:
+
+```
+pip install -r ./m-vton/requirements.txt
+```
+
+## Mesh Generation
+In this phase we generate the mesh image of the person by using SMPL-X, starting from the dataset provided by CP-VTON.
+
+Download the dataset divided into the input folder and make sure to have 
 
 Sample results can be found in directory:
 
