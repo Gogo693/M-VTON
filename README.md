@@ -35,5 +35,5 @@ python3 ./demo.py
 ```
 An example here:
 
-![Original image](https://github.com/Gogo693/FashionGAN/blob/master/m-vton/examples/input.jpg)
-![Smpl model](https://github.com/Gogo693/FashionGAN/blob/master/m-vton/examples/output.png)
+![Original image](https://github.com/Gogo693/M-VTON/blob/master/examples/input.jpg)
+![Smpl model](https://github.com/Gogo693/FashionGAN/blob/master/examples/output.png)
