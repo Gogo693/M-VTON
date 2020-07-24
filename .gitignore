@@ -10,3 +10,4 @@ venv*
 data*
 *.pth
 *.zip
+!./examples
