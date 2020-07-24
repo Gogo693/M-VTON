@@ -10,4 +10,5 @@ venv*
 data*
 *.pth
 *.zip
-!./examples
+!input.jpg
+!output.png
