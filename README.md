@@ -1,5 +1,9 @@
 # M-VTON
 
+This project is based on the Virtual Try-On solution proposed by [CP-VTON](https://github.com/sergeywong/cp-vton) and adds 2 main contributions:
+1. a meshed representation of the Human Body.
+2. a lower body part for the representation of lower body garments like pants or skirts.
+
 ## Requirements
 For the mesh generation part be sure to follow smpl-x original repository for installation instructions of smpl:
 [SMPL-X](https://github.com/vchoutas/smplify-x)
@@ -64,6 +68,3 @@ which runs the different parts of the algorithm composed of:
 3. vton train on train set
 4. gmm test on test set
 5. vton test on test set
-
-An example of the final result:
-![Final results](https://github.com/Gogo693/M-VTON/blob/master/examples/input.jpg)
